@@ -28,6 +28,6 @@ jobs:
       - name: eslint-check
         run: yarn eslint
       - name: prettier-check
-        run: yarn fmt:check
+        run: yarn run fmt
       - name: build
         run: yarn build
