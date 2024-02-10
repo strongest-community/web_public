@@ -58,7 +58,8 @@ export default function New() {
           <p>誰と？</p>
           <input value={withWhom} onChange={onChangeWithWhom} type="text" />
         </div>
-        <button type="submit" onClick={() => router.push(`/[id]`)}>
+        <button type="submit" onClick={() => router.push(`/1`)}>
+          {/* backendできたら編集 */}
           投稿する
         </button>
       </form>
