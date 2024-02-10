@@ -4,4 +4,5 @@ export type PlanData = {
   budget: number;
   situation: string;
   with_whom: string;
+  places: [];
 };
