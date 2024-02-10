@@ -6,11 +6,12 @@ import { PlanData } from "@/types/planType";
 
 const Page = () => {
   const [allPlans, setAllPlans] = useState<PlanData[]>([]);
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/plans");
+        const response = await fetch(`${baseUrl}/plans`);
         const jsonData = await response.json();
         console.log(jsonData);
         setAllPlans(jsonData.plans);
