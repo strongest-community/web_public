@@ -1,9 +1,9 @@
-import SearchForm from "@/components/Top/SearchForm";
+import Slider from "@/components/Slider";
 
 const Top = () => {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <SearchForm />
+      <Slider />
     </main>
   );
 };
