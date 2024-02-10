@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { PlanData } from "@/types/planType";
+
+import { useRouter } from "next/navigation";
+import { SearchPlanTypes } from "@/types/searchPlan.t";
 
 export default function SearchForm() {
-  const [formData, setFormData] = useState<PlanData>({
-    id: 0,
+  const router = useRouter();
+
+  const [formData, setFormData] = useState<SearchPlanTypes>({
     description: "",
-    budget: 0,
+    lower_budget: 10,
+    upper_budget: 100000000,
     situation: "",
     with_whom: "",
   });
@@ -23,12 +27,14 @@ export default function SearchForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
+    const SearchQuery = new URLSearchParams(formData as any).toString();
+    router.push(`/Post/Index?${SearchQuery}`);
   };
 
   return (
     <div>
       <p>トップページ</p>
-      <p>検索ぺーじ</p>
+      <p>検索ページ</p>
       <form onSubmit={handleSubmit}>
         <label>description:</label>
         <input
@@ -38,11 +44,19 @@ export default function SearchForm() {
           onChange={handleChange}
         />
         <br />
-        <label>budget:</label>
+        <label>lower_budget:</label>
         <input
           type="number"
-          name="budget"
-          value={formData.budget}
+          name="lower_budget"
+          value={formData.lower_budget}
+          onChange={handleChange}
+        />
+        <br />
+        <label>upper_budget:</label>
+        <input
+          type="number"
+          name="upper_budget"
+          value={formData.upper_budget}
           onChange={handleChange}
         />
         <br />
