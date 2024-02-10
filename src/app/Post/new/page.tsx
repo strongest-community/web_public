@@ -57,7 +57,7 @@ export default function New() {
           <input className="border w-96 h-[60px] mr-80" value={withWhom} onChange={onChangeWithWhom} type="text" />
         </div>
         <div className="flex justify-center">
-          <button className="border border-black p-[20px] px-44 rounded-[30px]" type="submit" onClick={() => router.push(`/1`)}>
+          <button className="border border-black p-[20px] px-44 rounded-[30px] m-10" type="submit" onClick={() => router.push(`/1`)}>
             {/* backendできたら編集 */}
             投稿する
           </button>
