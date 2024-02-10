@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { PlanData } from "@/types/planType";
 
-const page = () => {
+const Page = () => {
   const [allPlans, setAllPlans] = useState<PlanData[]>([]);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const page = () => {
           <p>{plan.with_whom}</p>
           {plan.places.map(
             (place: { id: number; plan_id: number; url: string }) => (
-              <div>
+              <div key={place.id}>
                 <p>{place.id}</p>
                 <p>{place.plan_id}</p>
                 <p>{place.url}</p>
@@ -70,4 +70,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
