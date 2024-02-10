@@ -37,46 +37,20 @@ export default function SearchForm() {
       <p>検索ページ</p>
       <form onSubmit={handleSubmit}>
         <label>description:</label>
-        <input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-        />
+        <input type="text" name="description" value={formData.description} onChange={handleChange} />
         <br />
         <label>lower_budget:</label>
-        <input
-          type="number"
-          name="lower_budget"
-          value={formData.lower_budget}
-          onChange={handleChange}
-        />
+        <input type="number" name="lower_budget" value={formData.lower_budget} onChange={handleChange} />
         <br />
         <label>upper_budget:</label>
-        <input
-          type="number"
-          name="upper_budget"
-          value={formData.upper_budget}
-          onChange={handleChange}
-        />
+        <input type="number" name="upper_budget" value={formData.upper_budget} onChange={handleChange} />
         <br />
         <label>situation:</label>
-        <input
-          type="text"
-          name="situation"
-          value={formData.situation}
-          onChange={handleChange}
-        />
+        <input type="text" name="situation" value={formData.situation} onChange={handleChange} />
         <br />
         <label>with_whom:</label>
-        <input
-          type="text"
-          name="with_whom"
-          value={formData.with_whom}
-          onChange={handleChange}
-        />
+        <input type="text" name="with_whom" value={formData.with_whom} onChange={handleChange} />
         <br />
-
         <button type="submit">Search</button>
       </form>
     </div>
