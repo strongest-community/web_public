@@ -1,7 +1,11 @@
-export default function Home() {
+import SearchForm from "@/components/Top/SearchForm";
+
+const Top = () => {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <p>main</p>
+      <SearchForm />
     </main>
   );
-}
+};
+
+export default Top;
