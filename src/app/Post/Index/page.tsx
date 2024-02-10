@@ -12,6 +12,8 @@ const page = () => {
       try {
         const response = await fetch("http://localhost:8000/plans");
         const jsonData = await response.json();
+        console.log(jsonData);
+        setAllPlans(jsonData.plans);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -43,18 +45,9 @@ const page = () => {
         plan.with_whom.toLowerCase().includes(query.with_whom.toLowerCase()))
     );
   });
-  console.log(allPlans);
 
   return (
     <div>
-      {allPlans.map((plan: any) => (
-        <div key={plan.id}>
-          <p>{plan.description}</p>
-          <p>{plan.budget}</p>
-          <p>{plan.situation}</p>
-          <p>{plan.with_whom}</p>
-        </div>
-      ))}
       <p>Search result</p>
       {filteredPlans.map((plan: any) => (
         <div key={plan.id}>
@@ -62,6 +55,15 @@ const page = () => {
           <p>{plan.budget}</p>
           <p>{plan.situation}</p>
           <p>{plan.with_whom}</p>
+          {plan.places.map(
+            (place: { id: number; plan_id: number; url: string }) => (
+              <div>
+                <p>{place.id}</p>
+                <p>{place.plan_id}</p>
+                <p>{place.url}</p>
+              </div>
+            )
+          )}
         </div>
       ))}
     </div>
