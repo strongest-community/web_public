@@ -21,7 +21,7 @@ const Footer = () => {
           <p>CONCEPT</p>
         </div>
       </div>
-      <p className="flex justify-center">&copy; 2024 Your Company Name. All rights reserved.</p>
+      <p className="flex justify-center">&copy; 2024 史上最強コミュニティ. All rights reserved.</p>
     </footer>
   );
 };
