@@ -63,7 +63,7 @@ const Page = () => {
   return (
     <div className="relative">
       <p className="m-10 text-[2em] font-bold">検索結果</p>
-      <p className="absolute top-[100px] left-[500px] text-[4em] font-bold">
+      <p className="absolute top-[100px] left-[500px] text-[2em] font-bold">
         Here's date plans that works for you!
       </p>
       <div className="flex">
