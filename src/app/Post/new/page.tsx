@@ -35,26 +35,26 @@ export default function New() {
 
   return (
     <div className="flex flex-col items-center text-[25px]">
-      <form>
-        <div className="flex gap-80 mb-[50px] border-b-2 h-[100px]">
+      <form className="w-[80vw]">
+        <div className="flex items-center mb-[5px] justify-between border-b-2 h-[130px]">
           <p>タイトル:</p>
-          <input value={title} onChange={onChangeTitle} type="text" />
+          <input className="border w-96 h-[60px] mr-80" value={title} onChange={onChangeTitle} type="text" />
         </div>
-        <div className="flex gap-80 mb-[50px] border-b-2 h-[90px]">
+        <div className="flex items-center justify-between mb-[5px]  border-b-2 h-[130px]">
           <p>プラン概要:</p>
-          <input value={description} onChange={onChangeDescription} type="text" />
+          <input className="w-96 border h-[60px] mr-80" value={description} onChange={onChangeDescription} type="text" />
         </div>
-        <div className="flex gap-80 mb-[50px] border-b-2 h-[100px]">
+        <div className="flex items-center justify-between mb-[5px] border-b-2 h-[130px]">
           <p>予算:</p>
-          <input value={budget} onChange={onChangeBudget} type="number" />円
+          <input placeholder="円" className="border w-96 h-[60px] text-right mr-80" value={budget} onChange={onChangeBudget} type="number" />
         </div>
-        <div className="flex gap-80 mb-[50px] border-b-2 h-[100px]">
+        <div className="flex items-center justify-between mb-[5px] border-b-2 h-[130px]">
           <p>シチュエーション:</p>
-          <input value={situation} onChange={onChangeSituation} type="text" />
+          <input className="border w-96 h-[60px] mr-80" value={situation} onChange={onChangeSituation} type="text" />
         </div>
-        <div className="flex gap-80 mb-[50px] border-b-2 h-[100px]">
+        <div className="flex items-center justify-between mb-[50px] border-b-2 h-[130px]">
           <p>誰と:</p>
-          <input value={withWhom} onChange={onChangeWithWhom} type="text" />
+          <input className="border w-96 h-[60px] mr-80" value={withWhom} onChange={onChangeWithWhom} type="text" />
         </div>
         <div className="flex justify-center">
           <button className="border border-black p-[20px] px-44 rounded-[30px]" type="submit" onClick={() => router.push(`/1`)}>
