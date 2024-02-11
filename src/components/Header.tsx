@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faImage } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -18,17 +17,19 @@ const Header = () => {
         <h1>
           <Link href="/Post/new">NewPost</Link>
         </h1>
-        <h1> 
-          <Link href="/Seach"><h1>Seach</h1></Link>
+        <h1>
+          <Link href="/Seach">
+            <h1>Seach</h1>
+          </Link>
         </h1>
       </div>
       <div className="flex gap-[70px] mr-[50px]">
-        <div className="flex flex-col items-center">
-          <Image src="/images/user.png" height={33} width={35} className="relative bottom-[5px]" alt="image" />
+        <div className="mt-[15px] flex flex-col items-center">
+          <FontAwesomeIcon icon={faUser} className="h-[30px] w-[30px]" />
           <p>my page</p>
         </div>
         <div className="mt-[15px] flex flex-col items-center">
-          <Image src="/images/heart.png" height={40} width={35} className="relative bottom-[5px]" alt="image" />
+          <FontAwesomeIcon icon={faImage} className="h-[30px] w-[30px]" />
           <p>my heart</p>
         </div>
       </div>
