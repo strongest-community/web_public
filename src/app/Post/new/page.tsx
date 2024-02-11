@@ -8,7 +8,7 @@ export default function New() {
   const [budget, setBudget] = useState("");
   const [situation, setSituation] = useState("");
   const [withWhom, setWithWhom] = useState("");
-  const [place, setPlace] = useState("");
+  const [places, setPlaces] = useState<string[]>([""]);
   const [postData, setPostData] = useState("");
   const router = useRouter();
 
@@ -17,8 +17,16 @@ export default function New() {
   const onChangeBudget = (e: React.ChangeEvent<HTMLInputElement>) => setBudget(e.target.value);
   const onChangeSituation = (e: React.ChangeEvent<HTMLInputElement>) => setSituation(e.target.value);
   const onChangeWithWhom = (e: React.ChangeEvent<HTMLInputElement>) => setWithWhom(e.target.value);
-  const onChangePlace = (e: React.ChangeEvent<HTMLInputElement>) => setPlace(e.target.value);
 
+  const onChangePlace = (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPlaces = [...places];
+    newPlaces[index] = e.target.value;
+    setPlaces(newPlaces);
+  };
+
+  const handleAddPlace = () => {
+    setPlaces([...places, ""]);
+  };
   const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch("http://localhost:8000/plans/", {
@@ -59,13 +67,24 @@ export default function New() {
           <p>シチュエーション:</p>
           <input className="border w-96 h-[60px] mr-80" value={situation} onChange={onChangeSituation} type="text" />
         </div>
-        <div className="flex items-center justify-between mb-[50px] border-b-2 h-[130px]">
+        <div className="flex items-center justify-between mb-[5px] border-b-2 h-[130px]">
           <p>誰と:</p>
           <input className="border w-96 h-[60px] mr-80" value={withWhom} onChange={onChangeWithWhom} type="text" />
         </div>
-        <div className="flex items-center justify-between mb-[50px] border-b-2 h-[130px]">
-          <p>場所:</p>
-          <input className="border w-96 h-[60px] mr-80" value={place} onChange={onChangePlace} type="text" />
+        {places.map((place, index) => (
+          <div className="flex items-center justify-between border-b-2 h-[130px]" key={place}>
+            <p>場所{index+1}:</p>
+            <div className="flex flex-col">
+              
+                <div className="flex items-center justify-between mb-[50px] h-[130px]" key={index}>
+                  <input placeholder="URLを入力" className="border w-96 h-[60px] mr-80 mt-[45px] text-center" value={place} onChange={onChangePlace(index)} type="text" />
+                </div>
+                
+            </div>
+          </div>
+        ))}
+        <div className="flex justify-end">
+          <button className="mr-[8vw] text-3xl" type="button" onClick={handleAddPlace}>+場所を追加</button>
         </div>
         <div className="flex justify-center">
           <button className="border border-black p-[20px] px-44 rounded-[30px] m-10" type="submit">

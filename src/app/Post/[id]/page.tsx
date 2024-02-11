@@ -97,7 +97,7 @@ function PlanDetails() {
           </form>
           <p>コメント一覧</p>
           {plan?.comments.map((e: any) => (
-            <p>
+            <p key={comment.id}>
               {e.stars}
               {e.comment}
             </p>
