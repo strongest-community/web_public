@@ -10,14 +10,16 @@ const Header = () => {
   return (
     <div className="h-[90px] flex justify-between items-center">
       <div className="ml-[30px] flex gap-[70px]">
-        <h1>AppName</h1>
         <h1>
+          <img src="/icon.png" alt="no icon" className="h-[60px] rounded-md" />
+        </h1>
+        <h1 className="flex items-center">
           <Link href="/Post/Index">AllPosts</Link>
         </h1>
-        <h1>
+        <h1 className="flex items-center">
           <Link href="/Post/new">NewPost</Link>
         </h1>
-        <h1>
+        <h1 className="flex items-center">
           <Link href="/Seach">
             <h1>Seach</h1>
           </Link>

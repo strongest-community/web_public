@@ -13,8 +13,8 @@ const Page = () => {
       try {
         const response = await fetch(`${baseUrl}/plans`);
         const jsonData = await response.json();
-        console.log(jsonData);
-        setAllPlans(jsonData.plans);
+
+        setAllPlans(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -71,7 +71,7 @@ const Page = () => {
           <img src="/hair_type_hero.jpg" alt="no image" />
         </div>
         <div className="mt-[100px] m-10">
-          {filteredPlans.map((plan: any) => (
+          {filteredPlans?.map((plan: any) => (
             <div key={plan.id} className="m-5">
               <a href={`/Post/${plan.id}`}>
                 <p className="text-[3em]">{plan.id}</p>
