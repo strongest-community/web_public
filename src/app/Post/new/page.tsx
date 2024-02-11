@@ -21,7 +21,9 @@ export default function New() {
 
   const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:8000/plans/", {
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    const res = await fetch(`${baseUrl}/plans/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +66,7 @@ export default function New() {
           <input className="border w-96 h-[60px] mr-80" value={withWhom} onChange={onChangeWithWhom} type="text" />
         </div>
         <div className="flex items-center justify-between mb-[50px] border-b-2 h-[130px]">
-          <p>場所:</p>
+          <p>場所(URL):</p>
           <input className="border w-96 h-[60px] mr-80" value={place} onChange={onChangePlace} type="text" />
         </div>
         <div className="flex justify-center">

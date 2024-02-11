@@ -62,20 +62,21 @@ const Page = () => {
   }
   return (
     <div className="relative">
-      <p className="m-10 text-[2em] font-bold">検索結果</p>
-      <p className="absolute top-[100px] left-[500px] text-[2em] font-bold">
+      <p className="absolute top-[70px] left-[470px] text-[2em] font-bold">
         Here's date plans that works for you!
       </p>
       <div className="flex">
-        <div className="mb-10">
-          <img src="/hair_type_hero.jpg" alt="no image" />
+        <div className="mb-10 w-[50%] p-10">
+          <img src="/hair_type_hero.jpg" alt="no image" className="h-[800px]" />
         </div>
-        <div className="mt-[100px] m-10">
+        <div className="mt-[100px] m-10 w-[50%]">
           {filteredPlans?.map((plan: any) => (
-            <div key={plan.id} className="m-5">
+            <div key={plan.id} className="m-3">
               <a href={`/Post/${plan.id}`}>
-                <p className="text-[3em]">{plan.id}</p>
-                <p className="text-[2em]">{plan.description}</p>
+                <p className="text-[2em]" style={{ color: "#2BC573" }}>
+                  {plan.id}
+                </p>
+                <p className="text-[2em] m-10 mt-0">{plan.title}</p>
               </a>
             </div>
           ))}

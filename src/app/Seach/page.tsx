@@ -10,8 +10,8 @@ export default function SearchForm() {
 
   const [formData, setFormData] = useState<SearchPlanTypes>({
     description: "",
-    lower_budget: 10,
-    upper_budget: 100000000,
+    lower_budget: 1000,
+    upper_budget: 100000,
     situation: "",
     with_whom: "",
   });

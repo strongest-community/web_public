@@ -61,13 +61,20 @@ function PlanDetails() {
       });
   };
 
+  const averageStars =
+    plan?.comments.reduce((acc: any, comment: any) => acc + comment.stars, 0) /
+    plan?.comments.length;
+
   return (
     <div className="min-h-[80vh] w-[100vw] flex p-24">
       <div className="w-[40%]">
-        <p className="text-[5em] font-bold">Title: {plan?.title}</p>
-        <p className="m-2">Stars</p>
+        <p className="text-[5em] font-bold">{plan?.title}</p>
+        <p className="m-2">{plan?.comments.length != 0 && averageStars}</p>
         <p className="m-2">おすすめパートナー：{plan?.with_whom}</p>
-        <div className="h-2 w-[95%] mx-auto bg-black rounded-[4px]"></div>
+        <div
+          className="h-2 w-[95%] mx-auto rounded-[4px]"
+          style={{ backgroundColor: "#2BC573" }}
+        ></div>
         <p className="m-2 text-[1.5em]">Description</p>
         <p className="m-5">{plan?.description}</p>
         <p className="m-2 text-[1.5em]">Situation</p>

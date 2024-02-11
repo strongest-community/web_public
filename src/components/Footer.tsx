@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-[100vw] bg-black text-white">
+    <footer className="w-[100vw] text-white" style={{ backgroundColor: "#2BC573" }}>
       <div className="flex justify-between">
         <div className="m-10">
           <p className="text-[2em]">Auther's</p>
@@ -21,7 +21,9 @@ const Footer = () => {
           <p>CONCEPT</p>
         </div>
       </div>
-      <p className="flex justify-center">&copy; 2024 史上最強コミュニティ. All rights reserved.</p>
+      <p className="flex justify-center">
+        &copy; 2024 史上最強コミュニティ. All rights reserved.
+      </p>
     </footer>
   );
 };
