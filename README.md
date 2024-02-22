@@ -17,12 +17,12 @@
 ### 技術スタック
 
 - 開発言語
-  - Html/CSS
+  - HTML/CSS
   - Javascript
 - フレームワーク
   - Next.js
 - ライブラリ
-  - TailWindCss
+  - Tailwindcss
   - Splide
     
 
