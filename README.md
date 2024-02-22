@@ -5,7 +5,7 @@
 ### 概要
 
 - 2024/02/10, 11 に開催された[Qiita Hackathon](https://qiita.com/official-campaigns/hackathon/2024-first)の予選でチーム史上最強コミュニティが作成した web アプリケーションの frontend です。
-- デートプラン共有アプリ「Couple Canvas」を作成しました。当アプリバックエンドの実装は[こちら](https://github.com/strongest-community/web_public)のリポジトリから確認できます.
+- デートプラン共有アプリ「Couple Canvas」を作成しました。当アプリバックエンドの実装は[こちら](https://github.com/strongest-community/backend_public)のリポジトリから確認できます.
 
 ### 発表資料
 
