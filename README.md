@@ -17,9 +17,14 @@
 ### 技術スタック
 
 - 開発言語
+  - Html/CSS
   - Javascript
 - フレームワーク
   - Next.js
+- ライブラリ
+  - TailWindCss
+  - Splide
+    
 
 
 # 実行方法
